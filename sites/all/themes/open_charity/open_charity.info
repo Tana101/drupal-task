@@ -1,0 +1,11 @@
+
+name = Open Charity
+description = A theme for an organisation that hosts events in London about open source software and solution for charities.
+core = 7.x
+regions[header] = Header
+regions[banner] = Banner
+regions[help] = Help
+regions[notification] = Notification
+regions[content] = Content
+regions[sub_footer] = Sub Footer
+regions[footer] = Footer
