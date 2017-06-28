@@ -4,3 +4,8 @@ sites/*/settings*.php
 # Ignore paths that contain user-generated content.
 sites/*/files
 sites/*/private
+
+# Ignore bower and node paths that contain user-generated dependencies.
+bower_components
+node_modules
+npm-debug.log
