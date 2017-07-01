@@ -1,0 +1,128 @@
+@mixin border-radius($radius) {
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	-ms-border-radius: $radius;
+	border-radius: $radius;
+}
+
+@mixin el-transition($duration) {
+	-moz-transition: all $duration ease-out;
+	-webkit-transition: all $duration ease-out;
+	-o-transition: all $duration ease-out;
+	transition: all $duration ease-out;
+}
+
+
+
+
+hr {
+	border: 0;
+	border-top: 1px solid #000;
+	display: block;
+	height: 1px;
+	margin: 1em 0;
+	padding: 0;
+}
+
+
+
+
+.highlight-teal {
+	color: $standard-teal;
+
+	a {
+		text-decoration: none;
+		color: $standard-teal;
+
+		&:hover {
+			color: $extra-dark-teal;
+		}
+	}
+}
+
+.highlight-blue {
+	color: $standard-blue;
+
+	a {
+		text-decoration: none;
+		color: $standard-blue;
+
+		&:hover {
+			color: $extra-dark-teal;
+		}
+	}
+}
+
+
+
+
+.block {
+	display: block;
+	height: 100%;
+	width: 100%;
+}
+
+.white-block {
+	@extend .block;
+	background: $white;
+}
+
+.light-gray-block {
+	@extend .block;
+	background: $light-gray-panel;
+}
+
+.dark-gray-block {
+	@extend .block;
+	background: $dark-gray-panel;
+}
+
+.block-content {
+	padding: 30px 0;
+}
+
+.btn {
+	a {
+		display: block;
+		background: none;
+		font-family: $museo-500;
+		font-size: 14px;
+		font-weight: bold;
+		text-decoration: none;
+		text-transform: uppercase;
+		padding: 12px 28px;
+		border: 2px solid #000;
+
+		@include border-radius(3px);
+
+		&:hover {
+			@include el-transition(0.4s);
+		}
+	}
+}
+
+.btn-hollow {
+	a {
+		background: none;
+		color: $standard-teal;
+		border-color: $standard-teal;
+
+		&:hover {
+			background: $dark-teal;
+			color: $white;
+		}
+	}
+}
+
+.btn-full {
+	a {
+		background: $standard-teal;
+		color: $white;
+		border-color: $dark-teal;
+
+		&:hover {
+			background: $extra-dark-teal;
+			color: $white;
+		}
+	}
+}

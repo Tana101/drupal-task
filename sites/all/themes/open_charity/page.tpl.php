@@ -88,43 +88,86 @@
 <div id="page-wrapper"><div id="page">
 
 	<div id="header" class="<?php print $secondary_menu ? 'with-secondary-menu': 'without-secondary-menu'; ?>">
-		<div class="section clearfix">
+		<div id="top-section">
+			<div class="section clearfix">
+				<div class="structure-container">
 
-			<?php if ($logo): ?>
-				<a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo">
-					<img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
-				</a>
-			<?php endif; ?>
+					<?php if ($logo): ?>
+						<a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo">
+							<img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
+						</a>
+					<?php endif; ?>
 
-			<?php print render($page['header']); ?>
+					<?php print render($page['header']); ?>
 
-			<?php if ($main_menu): ?>
-				<div id="main-menu" class="navigation">
-					<?php print theme('links__system_main_menu', array(
-						'links' => $main_menu,
-						'attributes' => array(
-							'id' => 'main-menu-links',
-							'class' => array('links', 'clearfix'),
-						),
-						'heading' => array(
-							'text' => t('Main menu'),
-							'level' => 'h2',
-							'class' => array('element-invisible'),
-						),
-					)); ?>
-				</div> <!-- /#main-menu -->
-			<?php endif; ?>
+					<?php if ($main_menu): ?>
+						<div id="main-menu" class="navigation">
+							<?php print theme('links__system_main_menu', array(
+								'links' => $main_menu,
+								'attributes' => array(
+									'id' => 'main-menu-links',
+									'class' => array('links', 'clearfix'),
+								),
+								'heading' => array(
+									'text' => t('Main menu'),
+									'level' => 'h2',
+									'class' => array('element-invisible'),
+								),
+							)); ?>
+						</div> <!-- /#main-menu -->
+					<?php endif; ?>
 
+				</div>
+			</div>
 		</div>
-	</div> <!-- /.section, /#header -->
 
-	<?php if ($page['banner']): ?>
-		<?php if ($site_slogan): ?>
-			<div id="site-slogan">
-				<?php print $site_slogan; ?>
+		<?php if ($page['banner']): ?>
+			<div id="banner_section">
+				<div id="banner_wrapper">
+					
+					<div class="overlay">
+						<div class="section clearfix">
+							
+							<div class="middle-vert-outer-wrap">
+								<div class="middle-vert-block">
+
+									<div class="structure-container">
+
+										<?php if ($site_slogan): ?>
+											<div id="banner_site_slogan">
+												<?php print $site_slogan; ?>
+											</div>
+										<?php endif; ?>
+
+										<div id="banner_text_container">
+											<div id="banner_text_reg">
+												Many charities’ goals are similar, as is the functionality we require, but little shared working takes place.
+											</div>
+
+											<div id="banner_text_small">
+												By working together, driving shared areas of interest and influencing open source developments we can bring efficiencies, improve the digital experience for our users, and have great impact.
+											</div>
+
+											<div id="banner_text_reg">
+												Together we can make a bigger diference.
+											</div>
+										</div>
+
+									</div>
+
+								</div>
+							</div>
+							
+						</div>
+					</div>
+
+					<div id="banner_bg"></div>
+
+				</div>
 			</div>
 		<?php endif; ?>
-	<?php endif; ?>
+	</div> <!-- /.section, /#header -->
+
 
 	<?php if ($messages): ?>
 		<div id="messages">
@@ -134,23 +177,38 @@
 		</div> <!-- /.section, /#messages -->
 	<?php endif; ?>
 
-	<?php if ($page['notification']): ?>
-		<div id="notification">
-			<div class="section clearfix">
-				<?php print render($page['notification']); ?>
-			</div>
-		</div> <!-- /.section, /#notification -->
+	<?php if ($page['next_event']): ?>
+		<div class="light-gray-block">
+			<div id="next_event" class="block-content structure-container">
+				<div class="section clearfix">
+					
+					<?php print render($page['next_event']); ?>
+				
+				</div>
+			</div> <!-- /.section, /#next_event -->
+		</div>
 	<?php endif; ?>
 
 	<div id="main-wrapper" class="clearfix">
 		<div id="main" class="clearfix">
 
-			<?php if ($page['content']): ?>
-				<div id="content" class="column content">
-					<div class="section">
-						<?php print render($page['content']); ?>
+			<div class="white-block">
+				<div id="get_involved_section" class="block-content structure-container">
+					<div class="section clearfix">
+						
+						<?php //print render($page['next_event']); ?>
+					
+						hi
 					</div>
-				</div> <!-- /.section, /#content -->
+				</div> <!-- /.section, /#next_event -->
+			</div>
+
+			<?php if ($page['content']): ?>
+				<!--div id="content" class="column content">
+					<div class="section">
+						<?//php print render($page['content']); ?>
+					</div>
+				</div>  /.section, /#content -->
 			<?php endif; ?>
 
 			<div id="content" class="column">
@@ -169,7 +227,6 @@
 						</div>
 					<?php endif; ?>
 					<?php print render($page['help']); ?>
-					<?php print render($page['content']); ?>
 					<?php print $feed_icons; ?>
 
 				</div>
@@ -186,16 +243,36 @@
 		</div></div> <!-- /#triptych, /#triptych-wrapper -->
 	<?php //endif; ?>
 
-	<div id="footer-wrapper">
-		<div class="section">
+	<div class="dark-gray-block">
+			<div id="footer" class="block-content structure-container">
+				<div class="section clearfix">
 
-			<?php if ($page['footer']): ?>
-				<div id="footer" class="clearfix">
-					<?php print render($page['footer']); ?>
-				</div> <!-- /#footer -->
-			<?php endif; ?>
+					<div id="social_icons" class="highlight-teal">
+						<ul class="fa-ul">
+							<li>
+								<a href="https://www.facebook.com" target="_blank">
+									<i class="fa-li fa fa-facebook"></i>
+								</a>
+							</li>
+							<li>
+								<a href="https://twitter.com" target="_blank">
+									<i class="fa-li fa fa-twitter"></i>
+								</a>
+							</li>
+							<li>
+								<a href="https://plus.google.com" target="_blank">
+									<i class="fa-li fa fa-google-plus"></i>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<hr>
+					<div id="footer_text">
+						<?php print render($page['footer']); ?>
+					</div>
 
+				</div>
+			</div> <!-- /.section, /#footer -->
 		</div>
-	</div> <!-- /.section, /#footer-wrapper -->
 
 </div></div> <!-- /#page, /#page-wrapper -->

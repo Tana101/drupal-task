@@ -1,0 +1,267 @@
+/* these are the site colors, the only colors to be used to maintain a uniform look */
+/* shades of teal and blue */
+/* shades of teal and blue */
+/* shades of gray */
+@font-face {
+  font-family: 'museo-sans-300';
+  src: url("../fonts/museo-sans-300.otf");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'museo-sans-500';
+  src: url("../fonts/museo-sans-300.otf");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'OpenSans-Regular';
+  src: url("../fonts/OpenSans-Regular.ttf");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'OpenSans-SemiBold';
+  src: url("../fonts/OpenSans-SemiBold.ttf");
+  font-weight: normal;
+  font-style: normal; }
+
+hr {
+  border: 0;
+  border-top: 1px solid #000;
+  display: block;
+  height: 1px;
+  margin: 1em 0;
+  padding: 0; }
+
+.highlight-teal {
+  color: #5fc0c3; }
+  .highlight-teal a {
+    text-decoration: none;
+    color: #5fc0c3; }
+    .highlight-teal a:hover {
+      color: #1caeb0; }
+
+.highlight-blue {
+  color: #5ac0cf; }
+  .highlight-blue a {
+    text-decoration: none;
+    color: #5ac0cf; }
+    .highlight-blue a:hover {
+      color: #1caeb0; }
+
+.block, .white-block, .light-gray-block, .dark-gray-block {
+  display: block;
+  height: 100%;
+  width: 100%; }
+
+.white-block {
+  background: #ffffff; }
+
+.light-gray-block {
+  background: #f1f2f5; }
+
+.dark-gray-block {
+  background: #454850; }
+
+.block-content {
+  padding: 30px 0; }
+
+.btn a {
+  display: block;
+  background: none;
+  font-family: "museo-sans-500", Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 12px 28px;
+  border: 2px solid #000;
+  border-radius: 3px; }
+  .btn a:hover {
+    transition: all 0.4s ease-out; }
+
+.btn-hollow a {
+  background: none;
+  color: #5fc0c3;
+  border-color: #5fc0c3; }
+  .btn-hollow a:hover {
+    background: #21bec0;
+    color: #ffffff; }
+
+.btn-full a {
+  background: #5fc0c3;
+  color: #ffffff;
+  border-color: #21bec0; }
+  .btn-full a:hover {
+    background: #1caeb0;
+    color: #ffffff; }
+
+/* Small Devices, Phones */
+/* Medium Devices, Tablets and Small Laptops */
+/* Large Devices, Wide Screens */
+/* resetting any default css set by drupal on all elements */
+* {
+  margin: 0px;
+  padding: 0px; }
+
+body {
+  width: 100%; }
+
+.structure-container, #header #banner_section #banner_wrapper .overlay .middle-vert-outer-wrap .structure-container #banner_text_container {
+  display: block;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto; }
+
+.middle-vert-outer-wrap {
+  display: table;
+  position: absolute;
+  height: 100%;
+  width: 100%; }
+  .middle-vert-outer-wrap .middle-vert-block {
+    display: table-cell;
+    vertical-align: middle; }
+
+.left {
+  float: left; }
+
+.right {
+  float: right; }
+
+#header #top-section {
+  background: #ffffff;
+  width: 100%;
+  height: 81px; }
+  #header #top-section .structure-container, #header #top-section #banner_section #banner_wrapper .overlay .middle-vert-outer-wrap .structure-container #banner_text_container, #header #banner_section #banner_wrapper .overlay .middle-vert-outer-wrap .structure-container #top-section #banner_text_container {
+    padding-top: 20px; }
+    #header #top-section .structure-container #logo, #header #top-section #banner_section #banner_wrapper .overlay .middle-vert-outer-wrap .structure-container #banner_text_container #logo, #header #banner_section #banner_wrapper .overlay .middle-vert-outer-wrap .structure-container #top-section #banner_text_container #logo {
+      float: left; }
+      #header #top-section .structure-container #logo img, #header #top-section #banner_section #banner_wrapper .overlay .middle-vert-outer-wrap .structure-container #banner_text_container #logo img, #header #banner_section #banner_wrapper .overlay .middle-vert-outer-wrap .structure-container #top-section #banner_text_container #logo img {
+        width: 155px;
+        height: auto; }
+    #header #top-section .structure-container .navigation, #header #top-section #banner_section #banner_wrapper .overlay .middle-vert-outer-wrap .structure-container #banner_text_container .navigation, #header #banner_section #banner_wrapper .overlay .middle-vert-outer-wrap .structure-container #top-section #banner_text_container .navigation {
+      font-family: "museo-sans-500", Arial, Helvetica, sans-serif;
+      font-weight: bold;
+      font-size: 14px; }
+      #header #top-section .structure-container .navigation ul, #header #top-section #banner_section #banner_wrapper .overlay .middle-vert-outer-wrap .structure-container #banner_text_container .navigation ul, #header #banner_section #banner_wrapper .overlay .middle-vert-outer-wrap .structure-container #top-section #banner_text_container .navigation ul {
+        list-style-type: none;
+        float: right; }
+        #header #top-section .structure-container .navigation ul li, #header #top-section #banner_section #banner_wrapper .overlay .middle-vert-outer-wrap .structure-container #banner_text_container .navigation ul li, #header #banner_section #banner_wrapper .overlay .middle-vert-outer-wrap .structure-container #top-section #banner_text_container .navigation ul li {
+          float: left; }
+          #header #top-section .structure-container .navigation ul li a, #header #top-section #banner_section #banner_wrapper .overlay .middle-vert-outer-wrap .structure-container #banner_text_container .navigation ul li a, #header #banner_section #banner_wrapper .overlay .middle-vert-outer-wrap .structure-container #top-section #banner_text_container .navigation ul li a {
+            background: none;
+            display: block;
+            padding: 12px 20px;
+            text-decoration: none;
+            text-transform: uppercase;
+            color: #565659; }
+            #header #top-section .structure-container .navigation ul li a:hover, #header #top-section #banner_section #banner_wrapper .overlay .middle-vert-outer-wrap .structure-container #banner_text_container .navigation ul li a:hover, #header #banner_section #banner_wrapper .overlay .middle-vert-outer-wrap .structure-container #top-section #banner_text_container .navigation ul li a:hover {
+              color: #61c0bd;
+              transition: all 0.4s ease-out; }
+          #header #top-section .structure-container .navigation ul li:last-of-type a, #header #top-section #banner_section #banner_wrapper .overlay .middle-vert-outer-wrap .structure-container #banner_text_container .navigation ul li:last-of-type a, #header #banner_section #banner_wrapper .overlay .middle-vert-outer-wrap .structure-container #top-section #banner_text_container .navigation ul li:last-of-type a {
+            padding: 12px 28px;
+            color: #61c0bd;
+            box-shadow: inset 0px 0px 0px 2px #61c0bd;
+            border-radius: 3px;
+            /* adding margin to hollow button because the padding does not separate
+								 * button from the other menu items */
+            margin-left: 20px; }
+            #header #top-section .structure-container .navigation ul li:last-of-type a:hover, #header #top-section #banner_section #banner_wrapper .overlay .middle-vert-outer-wrap .structure-container #banner_text_container .navigation ul li:last-of-type a:hover, #header #banner_section #banner_wrapper .overlay .middle-vert-outer-wrap .structure-container #top-section #banner_text_container .navigation ul li:last-of-type a:hover {
+              background: #21bec0;
+              color: #ffffff;
+              transition: all 0.2s ease-out; }
+
+#header #banner_section {
+  background: #000; }
+  #header #banner_section #banner_wrapper {
+    width: 100%;
+    height: 460px;
+    background-image: url("../images/bg-fill.png");
+    background-repeat: repeat-x;
+    background-attachment: scroll;
+    background-position: center; }
+    #header #banner_section #banner_wrapper .overlay {
+      float: left;
+      width: 100%;
+      height: 100%;
+      background: rgba(21, 27, 36, 0.5);
+      color: #ffffff;
+      text-align: center;
+      text-shadow: 0px 1px 5px #5a5a5a;
+      /* assigning 460px to middle wrap so that it matches container */ }
+      #header #banner_section #banner_wrapper .overlay .middle-vert-outer-wrap {
+        height: 460px; }
+        #header #banner_section #banner_wrapper .overlay .middle-vert-outer-wrap .structure-container, #header #banner_section #banner_wrapper .overlay .middle-vert-outer-wrap .structure-container #banner_text_container {
+          max-width: 800px; }
+          #header #banner_section #banner_wrapper .overlay .middle-vert-outer-wrap .structure-container #banner_site_slogan {
+            font-family: "museo-sans-300", Arial, Helvetica, sans-serif;
+            text-transform: uppercase;
+            font-size: 52px;
+            padding: 0px 15px 40px; }
+          #header #banner_section #banner_wrapper .overlay .middle-vert-outer-wrap .structure-container #banner_text_container {
+            max-width: 600px;
+            font-family: "OpenSans-Regular", Arial, Helvetica, sans-serif;
+            line-height: 1.8;
+            padding: 0px 15px 0px; }
+            #header #banner_section #banner_wrapper .overlay .middle-vert-outer-wrap .structure-container #banner_text_container #banner_text_reg {
+              font-size: 18px;
+              padding: 0px 0px 15px; }
+              #header #banner_section #banner_wrapper .overlay .middle-vert-outer-wrap .structure-container #banner_text_container #banner_text_reg:last-of-type {
+                padding: 0px; }
+            #header #banner_section #banner_wrapper .overlay .middle-vert-outer-wrap .structure-container #banner_text_container #banner_text_small {
+              font-size: 14px;
+              padding: 0px 0px 15px; }
+    #header #banner_section #banner_wrapper #banner_bg {
+      max-width: 1260px;
+      height: 460px;
+      background-image: url("../images/banner-bg.jpg");
+      background-repeat: no-repeat;
+      background-attachment: scroll;
+      background-position: top center;
+      margin-right: auto;
+      margin-left: auto; }
+
+#next_event .highlight-teal {
+  font-family: "OpenSans-SemiBold", Arial, Helvetica, sans-serif; }
+
+#next_event #event_date_time {
+  font-family: "museo-sans-500", Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  padding-bottom: 10px;
+  font-size: 16px;
+  color: #565659; }
+
+#next_event #event_location {
+  font-family: "OpenSans-Regular", Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  color: #5a6175; }
+
+#next_event .register-btn {
+  padding: 5px 0px; }
+
+#footer {
+  font-family: "OpenSans-Regular", Arial, Helvetica, sans-serif;
+  text-align: center; }
+  #footer #social_icons .fa-ul {
+    margin-left: 0; }
+    #footer #social_icons .fa-ul li {
+      display: inline-block; }
+    #footer #social_icons .fa-ul .fa-li {
+      position: relative;
+      left: 0; }
+    #footer #social_icons .fa-ul i {
+      font-size: 18px; }
+  #footer hr {
+    border-top: 1px solid #575b64; }
+  #footer #footer_text {
+    color: #969eb6;
+    font-size: 14px; }
+
+/* Small Devices, Phones */
+/* Medium Devices, Tablets and Small Laptops */
+@media only screen and (max-width: 992px) {
+  .structure-container, #header #banner_section #banner_wrapper .overlay .middle-vert-outer-wrap .structure-container #banner_text_container {
+    width: 100%; } }
+
+/* Large Devices, Wide Screens */
