@@ -1,11 +1,15 @@
-$small-screen: 640px;		/* Small Devices, Phones */
-$medium-screen: 992px;		/* Medium Devices, Tablets and Small Laptops */
-$large-screen: 1200px;		/* Large Devices, Wide Screens */
+/* <<<<< setting standard width limits that will be used responsively >>>>> */
+$smallScreen: 640px;		/* Small Devices, Phones */
+$mediumScreen: 900px;		/* Medium Devices, Tablets and Small Laptops */
+$largeScreen: 1200px;		/* Large Devices, Wide Screens */
+
+$stdStructureWidth: 1100px;
+$edgeStructureWidth: 1260px;
 
 
 
 
-/* resetting any default css set by drupal on all elements */
+/* <<<<< setting default css to be used on all key elements >>>>> */
 * {
 	margin: 0px;
 	padding: 0px;
@@ -17,11 +21,11 @@ body {
 
 .structure-container {
 	display: block;
-	max-width: 1100px;
-	margin-left: auto;
-	margin-right: auto;
+	max-width: $stdStructureWidth;
+	margin: 0 auto;
 }
 
+// vertically aligns child blocks in the parent
 .middle-vert-outer-wrap {
 	display: table;
 	position: absolute;
@@ -42,18 +46,110 @@ body {
 	float: right;
 }
 
+.text-center {
+	text-align: center;
+}
+
+$totalColNum: 1;		/* The total number of columns in a row - min 1 max 12 - can be nested */
+$gutterSpace: 30px;		/* The amount of space between columns */
+$precisionOffset: 3px;	/* A few extra pixels to make sure the gutter is not too big for width */
+
+/* These classes must be the same per row on all columns in the given row */
+.total-col-1 {
+	$totalColNum: 1;
+	width: calc((100% - (#{$gutterSpace} + #{$precisionOffset}) * (#{$totalColNum} - 1)) / #{$totalColNum});
+}
+.total-col-2 {
+	$totalColNum: 2;
+	width: calc((100% - (#{$gutterSpace} + #{$precisionOffset}) * (#{$totalColNum} - 1)) / #{$totalColNum});
+}
+.total-col-3 {
+	$totalColNum: 3;
+	width: calc((100% - (#{$gutterSpace} + #{$precisionOffset}) * (#{$totalColNum} - 1)) / #{$totalColNum});
+}
+.total-col-4 {
+	$totalColNum: 4;
+	width: calc((100% - (#{$gutterSpace} + #{$precisionOffset}) * (#{$totalColNum} - 1)) / #{$totalColNum});
+}
+.total-col-5 {
+	$totalColNum: 5;
+	width: calc((100% - (#{$gutterSpace} + #{$precisionOffset}) * (#{$totalColNum} - 1)) / #{$totalColNum});
+}
+.total-col-6 {
+	$totalColNum: 6;
+	width: calc((100% - (#{$gutterSpace} + #{$precisionOffset}) * (#{$totalColNum} - 1)) / #{$totalColNum});
+}
+.total-col-7 {
+	$totalColNum: 7;
+	width: calc((100% - (#{$gutterSpace} + #{$precisionOffset}) * (#{$totalColNum} - 1)) / #{$totalColNum});
+}
+.total-col-8 {
+	$totalColNum: 8;
+	width: calc((100% - (#{$gutterSpace} + #{$precisionOffset}) * (#{$totalColNum} - 1)) / #{$totalColNum});
+}
+.total-col-9 {
+	$totalColNum: 9;
+	width: calc((100% - (#{$gutterSpace} + #{$precisionOffset}) * (#{$totalColNum} - 1)) / #{$totalColNum});
+}
+.total-col-10 {
+	$totalColNum: 10;
+	width: calc((100% - (#{$gutterSpace} + #{$precisionOffset}) * (#{$totalColNum} - 1)) / #{$totalColNum});
+}
+.total-col-11 {
+	$totalColNum: 11;
+	width: calc((100% - (#{$gutterSpace} + #{$precisionOffset}) * (#{$totalColNum} - 1)) / #{$totalColNum});
+}
+.total-col-12 {
+	$totalColNum: 12;
+	width: calc((100% - (#{$gutterSpace} + #{$precisionOffset}) * (#{$totalColNum} - 1)) / #{$totalColNum});
+}
+
+
+.col {
+	float: left;
+	margin-right: $gutterSpace;
+	margin-bottom: 0;
+	//border: 1px solid red;
+
+	&:last-of-type {
+		margin-right: 0px;
+	}
+}
+
+.row {
+	&:after {
+		content: "";
+		clear: both;
+		display: table;
+	}
+}
 
 
 
 
+/* <<<<< styling block-user-login block >>>>> */
+#block-user-login {
+	font-family: $open_sans_regular;
+	text-align: center;
+	padding-top: 40px;
 
+	li {
+		list-style-type: none;
+	}
+}
+
+
+
+
+/* <<<<< styling header block >>>>> */
 #header {
-	#top-section {
+	#top_section {
 		background: $white;
 		width: 100%;
 		height: 81px;
 		
 		.structure-container {
+			position: relative;
 			padding-top: 20px;
 
 			#logo {
@@ -65,12 +161,12 @@ body {
 				}
 			}
 
-			.navigation {
-				font-family: $museo-500;
+			.nav {
+				font-family: $museo_500;
 				font-weight: bold;
 				font-size: 14px;
 
-				ul {
+				ul#main_menu_links {
 					list-style-type: none;
 					float: right;
 
@@ -83,10 +179,10 @@ body {
 							padding: 12px 20px;
 							text-decoration: none;
 							text-transform: uppercase;
-							color: $gray-text-title;
+							color: $gray_text_title;
 
 							&:hover {
-								color: $menu-teal;
+								color: $menu_teal;
 
 								@include el-transition(0.4s);
 							}
@@ -95,10 +191,10 @@ body {
 						&:last-of-type {
 							a {
 								padding: 12px 28px;
-								color: $menu-teal;
-								-webkit-box-shadow: inset 0px 0px 0px 2px $menu-teal;
-								-moz-box-shadow: inset 0px 0px 0px 2px $menu-teal;
-								box-shadow: inset 0px 0px 0px 2px $menu-teal;
+								color: $menu_teal;
+								-webkit-box-shadow: inset 0px 0px 0px 2px $menu_teal;
+								-moz-box-shadow: inset 0px 0px 0px 2px $menu_teal;
+								box-shadow: inset 0px 0px 0px 2px $menu_teal;
 								
 								@include border-radius(3px);
 
@@ -107,13 +203,85 @@ body {
 								margin-left: 20px;
 
 								&:hover {
-									background: $dark-teal;
+									background: $dark_teal;
 									color: $white;
 
 									@include el-transition(0.2s);
 								}
 							}
 						}
+					}
+				}
+			}
+
+			.mobile-nav {
+				position: absolute;
+				top: 81px;					/* matches #top_section height */
+				z-index: 3;
+				font-family: $museo_500;
+				font-weight: bold;
+				font-size: 14px;
+				width: 100%;
+
+				#menu_btn {
+					position: absolute;
+					top: -70px;
+					right: 0;
+					padding: 15px 20px;
+					text-decoration: none;
+					color: $gray_text_title;
+					cursor: pointer;
+
+					#menu_icon {
+						i {
+							font-size: 25px;
+						}
+					}
+
+					&:hover {
+						color: $dark_teal;
+
+						@include el-transition(0.4s);
+					}
+				}
+
+				ul#mobile_menu_links {
+					list-style-type: none;
+					float: left;
+					background: $light_gray_panel;
+					width: 100%;
+					height: 0;
+					overflow: hidden;
+
+					@include el-transition(0.4s);
+
+					li {
+						float: left;
+						width: 100%;
+
+						a {
+							background: none;
+							display: block;
+							padding: 20px;
+							text-decoration: none;
+							text-transform: uppercase;
+							color: $gray_text_title;
+
+							&:hover {
+								color: $white;
+								background: $dark_teal;
+
+								@include el-transition(0.4s);
+							}
+						}
+					}
+				}
+
+				#menu_check {
+					display: none;
+
+					&:checked ~ #mobile_menu_links {
+						height: 171px;
 					}
 				}
 			}
@@ -149,7 +317,7 @@ body {
 						max-width: 800px;
 
 						#banner_site_slogan {
-							font-family: $museo-300;
+							font-family: $museo_300;
 							text-transform: uppercase;
 							font-size: 52px;
 							padding: 0px 15px 40px;
@@ -159,7 +327,7 @@ body {
 							@extend .structure-container;
 
 							max-width: 600px;
-							font-family: $open-sans-regular;
+							font-family: $open_sans_regular;
 							line-height: 1.8;
 							padding: 0px 15px 0px;
 
@@ -182,7 +350,7 @@ body {
 			}
 
 			#banner_bg {
-				max-width: 1260px;
+				max-width: $edgeStructureWidth;
 				height: 460px;
 				background-image: url('../images/banner-bg.jpg');
 				background-repeat: no-repeat;
@@ -195,23 +363,27 @@ body {
 	}
 }
 
+
+
+
+/* <<<<< styling next_event block >>>>> */
 #next_event {
 	.highlight-teal {
-		font-family: $open-sans-semi-bold;
+		font-family: $open_sans_semi_bold;
 	}
 
 	#event_date_time {
-		font-family: $museo-500;
+		font-family: $museo_500;
 		font-weight: bold;
 		padding-bottom: 10px;
 		font-size: 16px;
-		color: $gray-text-title;
+		color: $gray_text_title;
 	}
 
 	#event_location {
-		font-family: $open-sans-regular;
+		font-family: $open_sans_regular;
 		font-size: 14px;
-		color: $gray-text-body;
+		color: $gray_text_body;
 	}
 
 	.register-btn {
@@ -219,8 +391,88 @@ body {
 	}
 }
 
+
+
+
+/* <<<<< styling sub_footer block >>>>> */
+#sub_footer {
+	position: relative;
+	font-family: $open_sans_regular;
+	color: $gray_text_body;
+	text-align: left;
+
+	.light-gray-block {
+		$topBlockHeight: 120px;
+
+		min-height: $topBlockHeight;
+		max-height: $topBlockHeight;
+	}
+
+	.slate-gray-block {
+		$bottomBlockHeight: 185px;
+
+		min-height: $bottomBlockHeight;
+		max-height: $bottomBlockHeight;
+	}
+
+	.white-block {
+		position: absolute;
+		bottom: 0;
+		max-width: $edgeStructureWidth;
+		height: 100%;
+		left: 50%;
+
+		@include el-translate(-50%, 0);
+
+		.block-content {
+			padding: 30px;
+		}
+
+		#blog_articles_section {
+			position: relative;
+
+			h2 {
+				text-align: center;
+				padding-bottom: 30px;
+			}
+
+			hr {
+				border-top: 1px solid $light_gray_line;
+			}
+
+			.title-block {
+				a {
+					display: inline-block;
+					font-family: $open_sans_semi_bold;
+					color: $standard_teal;
+					font-size: 14px;
+					text-decoration: none;
+					white-space: nowrap;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					max-width: 23ch;
+				}
+			}
+
+			.text-block, .date-block {
+				font-family: $open_sans_regular;
+				color: $gray_text_body;
+				font-size: 14px;
+			}
+		}
+	}
+
+	.load-more-block {
+		display: none;
+	}
+}
+
+
+
+
+/* <<<<< styling footer block >>>>> */
 #footer {
-	font-family: $open-sans-regular;
+	font-family: $open_sans_regular;
 	text-align: center;
 
 	#social_icons {
@@ -243,31 +495,176 @@ body {
 	}
 
 	hr {
-		border-top: 1px solid $dark-gray-line;
+		border-top: 1px solid $dark_gray_line;
 	}
 
 	#footer_text {
-		color: $gray-text-footer;
+		color: $gray_text_footer;
 		font-size: 14px;
 	}
 }
 
 
-/* Small Devices, Phones */
-@media only screen and (max-width : $small-screen) {
-	//background: red;
-}
 
 
-/* Medium Devices, Tablets and Small Laptops */
-@media only screen and (max-width : $medium-screen) {
-	.structure-container {
-		width: 100%;
+/* <<<<< styling responsive display >>>>> */
+
+/* Largest Devices */
+@media only screen and (min-width : ($largeScreen + 1)) {
+	#header {
+		#logo {
+			padding: 0;
+		}
+
+		.nav {
+			display: block;
+			padding: 0;
+		}
+
+		.mobile-nav {
+			display: none;
+		}
 	}
 }
 
 
+
 /* Large Devices, Wide Screens */
-@media only screen and (max-width : $large-screen) {
-	//background: red;
+@media only screen and (max-width : $largeScreen) {
+	#header {
+		#logo {
+			padding: 0 30px;
+		}
+
+		.nav {
+			display: block;
+			padding: 0 30px;
+		}
+
+		.mobile-nav {
+			display: none;
+		}
+	}
+
+	.block-content.structure-container, .responsive-padding {
+		padding-right: 30px;
+		padding-left: 30px;
+	}
+}
+
+
+
+/* Medium Devices, Tablets and Small Laptops */
+@media only screen and (max-width : $mediumScreen) {
+	#header {
+		.nav {
+			display: none;
+		}
+
+		.mobile-nav {
+			display: block;
+		}
+
+		#banner_section {
+			#banner_site_slogan {
+				font-size: 38px !important;
+			}
+		}
+	}
+
+	.total-col-1, .total-col-2, .total-col-3, .total-col-4, .total-col-5, .total-col-6, .total-col-7, .total-col-8, .total-col-9, .total-col-10, .total-col-11, .total-col-12 {
+		width: 100%;
+	}
+
+	.col {
+		margin-bottom: 40px;
+
+		&:last-of-type {
+			margin-bottom: 0;
+		}
+	}
+
+	#next_event {
+		.col {
+			margin-bottom: 15px;
+
+			&:last-of-type {
+				margin-bottom: 0;
+			}
+		}
+
+		#event_date_time, #event_location {
+			float: left;
+			width: 100%;
+			text-align: center;
+		}
+
+		.register-btn {
+			float: none;
+			width: 100%;
+		}
+	}
+
+	#our_mission_section {
+		.col {
+			margin-bottom: 100px;
+
+			&:last-of-type {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	#sub_footer {
+		.light-gray-block, .slate-gray-block {
+			min-height: 0px;
+		}
+
+		.white-block {
+			position: relative;
+
+			.carousel-arrow {
+				display: none;
+			}
+
+			.col {
+				margin-bottom: 70px;
+
+				&:last-of-type {
+					margin-bottom: 0;
+				}
+			}
+		}
+
+		.load-more-block {
+			display: block;
+
+			.load-more-btn {
+				width: 50%;
+				margin: 30px auto 0px;
+			}
+		}
+	}
+}
+
+
+
+/* Small Devices, Phones */
+@media only screen and (max-width : $smallScreen) {
+	#header {
+		.nav {
+			display: none;
+		}
+
+		.mobile-nav {
+			display: block;
+		}
+
+		#banner_section {
+			#banner_site_slogan {
+				font-size: 30px !important;
+				padding: 0px 15px 5px !important;
+			}
+		}
+	}
 }

@@ -23,5 +23,3 @@ gulp.task('default', ['sass'], function() {
 	gulp.watch(['sites/all/themes/open_charity/scss/**/*.scss'], ['sass']);
 });
 
-
-// CANNOT FIND NODE MODULES AND FOLDER -> LOOK FOR THESE

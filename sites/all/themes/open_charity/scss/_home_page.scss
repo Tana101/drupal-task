@@ -1,0 +1,181 @@
+.home-page {
+	/* default font family and color */
+
+	font-family: $open_sans_regular;
+	color: $gray_text_body;
+	text-align: center;
+
+	hr {
+		border-top: 1px solid $medium_gray_line;
+	}
+
+	#get_involved_section {
+		.img-std-block {
+			height: 120px;
+			padding: 25px;
+		}
+
+		.img-properties {
+			display: block;
+			margin: 0 auto;
+			width: auto;
+		}
+
+		#meetup_col {
+			.image-block {
+				@extend .img-std-block;
+
+				img {
+					padding-top: 20px;
+					height: 85px;
+
+					@extend .img-properties;
+					@include el-rotate(-7deg);
+				}
+			}
+		}
+
+		#communicate_col {
+			.image-block {
+				@extend .img-std-block;
+
+				img {
+					height: 120px;
+
+					@extend .img-properties;
+				}
+			}
+		}
+
+		#collab_col {
+			.image-block {
+				@extend .img-std-block;
+
+				img {
+					height: 120px;
+
+					@extend .img-properties;
+				}
+			}
+		}
+
+		.title-block {
+			padding: 15px 0px;
+		}
+
+		.text-block {
+			padding: 0px 0px 25px;
+			font-size: 14px;
+		}
+
+		.btn-block {
+			max-width: 200px;
+			margin: 0 auto;
+		}
+	}
+
+	#our_mission_section {
+		h2 {
+			padding-bottom: 30px;
+		}
+
+		.text-block {
+			color: $gray_text_body;
+			padding: 0px 0px 25px;
+			font-size: 14px;
+		}
+
+		.large {
+			font-family: $museo_500;
+			font-size: 17px;
+			font-weight: bold;
+			padding-bottom: 100px;
+		}
+
+		.qualities-block {
+			background: $white;
+
+			@include border-radius(3px);
+
+			$circleSize : 100px;
+
+			.image-block {
+				position: relative;
+
+				.white-circle {
+					position: absolute;
+					background: $white;
+					width: $circleSize;
+					height: $circleSize;
+					left: 50%;
+					top: (($circleSize / 2) * (0 - 1));
+
+					@include border-radius(50%);
+					@include el-translate(-50%, 0);
+
+					.blue-icon {
+						$circSizeDiff : 20px;
+
+						width: $circleSize - $circSizeDiff;
+						height: $circleSize - $circSizeDiff;
+						padding-top: $circSizeDiff / 2;
+					}
+				}
+			}
+
+			.title-block {
+				font-family: $museo_500;
+				color: $standard_blue;
+				padding: 15px 18px;
+				margin-top: $circleSize / 2;
+				font-size: 17px;
+				font-weight: bold;
+			}
+
+			.text-block {
+				color: $gray_text_title;
+				padding: 0px 18px 25px;
+				font-size: 14px;
+			}
+		}
+	}
+
+	#our_members_section {
+		h2 {
+			padding-bottom: 30px;
+		}
+
+		.row-padding {
+			padding-bottom: 40px;
+
+			.image-block {
+				position: relative;
+				height: 90px;
+
+				img {
+					max-width: 140px;
+					max-height: 85px;
+				}
+				
+				#kop_member {
+					max-width: 105px;
+				}
+
+				.circle-shadow {
+					$shadowSize : 86px;
+
+					position: absolute;
+					background: none;
+					width: $shadowSize;
+					height: $shadowSize;
+					top: 0;
+					left: 50%;
+
+					@include el-shadow(0px 0px 10px 1px rgba(0,0,0,0.2));
+					@include border-radius(50%);
+					@include el-translate(-50%, 0);
+				}
+			}
+		}
+	}
+}

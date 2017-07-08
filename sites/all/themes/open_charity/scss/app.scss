@@ -1,6 +1,5 @@
 @charset 'utf-8';
 
-//@import 'settings';
 
 //main styles
 @import 'colors';
@@ -9,6 +8,4 @@
 @import 'layout';
 
 //page templates
-//@import 'notification_bars';
-//@import 'home';
-//@import 'error_page';
+@import 'home_page';
